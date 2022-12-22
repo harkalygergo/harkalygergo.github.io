@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e64f252a393444660d6d2e6f5793c169ba4a5088',
+        'reference' => '9184acb7849bc92448f2832c2bce6b842c0c5552',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e64f252a393444660d6d2e6f5793c169ba4a5088',
+            'reference' => '9184acb7849bc92448f2832c2bce6b842c0c5552',
             'dev_requirement' => false,
         ),
         'twbs/bootstrap' => array(
