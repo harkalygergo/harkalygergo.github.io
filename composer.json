@@ -1,5 +1,6 @@
 {
     "require": {
-        "twbs/bootstrap": "^5.2"
+        "twbs/bootstrap": "^5.2",
+        "mervick/material-design-icons": "^2.2"
     }
 }
