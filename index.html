@@ -21,27 +21,27 @@
 		}
 
 		body { font-family: 'Ubuntu', sans-serif; background-color: black; }
+		
+		a { color: var(--link-color); text-decoration: none; }
+		a:hover { color:gray !important; text-decoration: underline; }
 
-		.container { z-index:1; }
-
-		main a { color: var(--link-color); text-decoration: none; }
-		main a:hover { color:black; text-decoration: underline; }
-	
-		aside { max-width:400px !important; background-color: #444;color:white; }
-		aside a { color:var(--link-color); }
+		aside { background-color: #444;color:white; }
+		aside a { color:white; text-decoration: underline; }
 		aside a:hover { color:black; text-decoration: underline; }
 		aside img { border-radius:50%; }
 		aside ul { list-style: none; }
 
-		#particles-js { position: absolute; width: 100%; height: 100%; z-index:0; }
+		.particles-js { top:0; left:0; position: absolute; width: 100%; height: 100%; z-index:-1; }
 	</style>
 </head>
 <body>
-<div id="particles-js"></div>
-<div class="container my-md--5">
+<canvas class="particles-js"></canvas>
+
+
+<div class="container my-md-5">
 
 	<div class="row">
-		<aside class="col p-0">
+		<aside class="col-md-3 p-0">
 
 			<div class="text-bg-dark text-center pb-1">
 				<img src="/harkalygergo.jpg" alt="Harkály Gergő" class="img-fluid py-4 px-5" />
@@ -52,7 +52,7 @@
 				<ul>
 					<li><span class="material-symbols-outlined">smartphone</span> +36305512337</li>
 					<li><span class="material-symbols-outlined">email</span> githubcv [at] harkalygergo.hu</li>
-					<li><span class="material-symbols-outlined">language</span> https://www.harkalygergo.hu</li>
+					<li><span class="material-symbols-outlined">language</span> <a target="_blank" href="https://www.harkalygergo.hu">https://www.harkalygergo.hu</a></li>
 				</ul>
 				<hr>
 				<ul>
@@ -69,47 +69,72 @@
 				</ul>
 				<hr>
 				<ul>
-					<li><span class="material-symbols-outlined">tag</span> Bootstrap Firefox PhpStorm Symfony Twig WordPress Xubuntu</li>
+					<li><span class="material-symbols-outlined">tag</span> Bootstrap Firefox HestiaCP PhpStorm Symfony Twig VPS WordPress Xubuntu</li>
 				</ul>
 			</div>
 
 
 		</aside>
-		<main class="col bg-light p-4">
-			<h1>Hello World</h1>
-			<p class="lead">I'm Gergő Harkály, a full-stack web (PHP) developer from Budapest, Hungary.</p>
+		<main class="col-md-9 bg-light p-4">
+			<h1>Hello World,</h1>
+			<p class="lead">I'm Gergő Harkály, a full-stack web (PHP) developer from Budapest, Hungary. In the last years I helped mainly Hungarian companies with their web requests. I usually works with WordPress (+WooCommerce) and Magento CMS, developing custom plugins and web applications.</p>
+			<p>I like running, but my main hobby is watches, I love the complexitiy of them.</p>
 
-			<h3>Own projects from my pasts</h3>
-			<ul>
-				<li><a href="https://infopedia.blog" target="_blank" rel="nofollow">Infopedia.blog</a></li>
-				<li><a href="https://unifilter.org" target="_blank" rel="https://www.freelancer.com/users/email-change/complete.php?requestId=786394&verifyCode=ab85bfcf176a5e3cnofollow">Unifilter.org</a></li>
-				<li>
-					WebCard:
+			<hr>
+			<h3>Projects</h3>
+			<div class="row">
+				<div class="col">
+					<h4>Own projects</h4>
 					<ul>
-						<li><a href="https://www.webcard.cz" target="_blank" rel="nofollow">WebCard.cz</a></li>
-						<li><a href="https://www.webcard.hu" target="_blank" rel="nofollow">WebCard.hu</a></li>
-						<li><a href="https://www.webcard.ro" target="_blank" rel="nofollow">WebCard.ro</a></li>
+						<li>
+							WebCard:
+							<ul>
+								<li><a href="https://www.webcard.cz" target="_blank" rel="nofollow">WebCard.cz</a></li>
+								<li><a href="https://www.webcard.hu" target="_blank" rel="nofollow">WebCard.hu</a></li>
+								<li><a href="https://www.webcard.ro" target="_blank" rel="nofollow">WebCard.ro</a></li>
+							</ul>
+						</li>
+						<li><a href="https://www.telepulesinfo.hu" target="_blank" rel="nofollow">Településinfó.hu</a></li>
+						<li><a href="https://www.wprenter.com" target="_blank" rel="nofollow">WPrenter.com</a></li>
+						<li><a href="https://unifilter.org" target="_blank" rel="nofollow">Unifilter.org</a></li>
+						<li><a href="https://infopedia.blog" target="_blank" rel="nofollow">Infopedia.blog</a></li>
 					</ul>
-				</li>
-				<li><a href="https://www.telepulesinfo.hu" target="_blank" rel="nofollow">Településinfó.hu</a></li>
-				<li><a href="https://www.wprenter.com" target="_blank" rel="nofollow">WPrenter.com</a></li>
-			</ul>
+				</div>
+				<div class="col">
+					<h4>Planned projects</h4>
+					<ul>
+						<li>eBooks</li>
+						<li>ServiceBook</li>
+						<li>Syncer</li>
+						<li>UniForm</li>
+					</ul>
+				</div>
+			</div>
 
-			<h3>Planned projects</h3>
-			<ul>
-				<li>eBooks</li>
-				<li>ServiceBook</li>
-				<li>Syncer</li>
-				<li>UniForm</li>
-			</ul>
-
+			<hr>
 			<h3>Portfolio</h3>
-			<ul>
-				<li><a target="_blank" href="https://www.diateka.hu/">diateka.hu</a></li>
-				<li><a target="_blank" href="https://www.nagydrotfono.hu/">nagydrotfono.hu</a></li>
-				<li><a target="_blank" href="https://www.ask-net.hu/">ask-net.hu</a></li>
-				<li><a target="_blank" href="https://www.helloled.hu/">helloled.hu</a></li>
-			</ul>
+			<div class="row">
+				<div class="col">
+					<h4>Website</h4>
+					<ul>
+						<li><a target="_blank" href="https://www.diateka.hu/">diateka.hu</a></li>
+						<li><a target="_blank" href="https://www.nagydrotfono.hu/">nagydrotfono.hu</a></li>
+						<li><a target="_blank" href="https://www.ask-net.hu/">ask-net.hu</a></li>
+						<li><a target="_blank" href="https://www.helloled.hu/">helloled.hu</a></li>
+					</ul>
+				</div>
+				<div class="col">
+					<h4>Web application</h4>
+					<ul>
+						<li><a target="_blank" rel="nofollow" href="https://www.luigisbox.com/">Luigi's Box</a> + WordPress</li>
+						<li><a target="_blank" rel="nofollow" href="https://getprintbox.com/">Printbox</a> + WordPress</li>
+						<li><a target="_blank" rel="nofollow" href="https://www.sprinter.hu/">Sprinter</a> + WordPress</li>
+						<li><a target="_blank" rel="nofollow" href="https://www.naturasoft.hu/">Naturasoft</a> + ShopRenter, WordPress</li>
+						<li><a target="_blank" rel="nofollow" href="https://www.agroinform.hu/">Agroinform</a> + ShopRenter</li>
+						<li><a target="_blank" rel="nofollow" href="https://clearadmin.hu/">Clear Admin</a> + Magento 1, 2</li>
+					</ul>
+				</div>
+			</div>
 
 		</main>
 	</div>
@@ -122,119 +147,29 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script src="/assets/particles.js-master/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
 <script>
-	// ParticlesJS Config.
-	particlesJS("particles-js", {
-		"particles": {
-			"number": {
-				"value": 80,
-				"density": {
-					"enable": true,
-					"value_area": 800
-				}
-			},
-			"color": {
-				"value": "#ffffff"
-			},
-			"shape": {
-				"type": "circle",
-				"stroke": {
-					"width": 0,
-					"color": "#000000"
-				},
-				"polygon": {
-					"nb_sides": 5
-				},
-				"image": {
-					"src": "img/github.svg",
-					"width": 100,
-					"height": 100
-				}
-			},
-			"opacity": {
-				"value": 0.5,
-				"random": false,
-				"anim": {
-					"enable": false,
-					"speed": 1,
-					"opacity_min": 0.1,
-					"sync": false
-				}
-			},
-			"size": {
-				"value": 3,
-				"random": true,
-				"anim": {
-					"enable": false,
-					"speed": 40,
-					"size_min": 0.1,
-					"sync": false
-				}
-			},
-			"line_linked": {
-				"enable": true,
-				"distance": 150,
-				"color": "#ffffff",
-				"opacity": 0.4,
-				"width": 1
-			},
-			"move": {
-				"enable": true,
-				"speed": 4,
-				"direction": "none",
-				"random": false,
-				"straight": false,
-				"out_mode": "out",
-				"bounce": false,
-				"attract": {
-					"enable": false,
-					"rotateX": 600,
-					"rotateY": 1200
-				}
-			}
-		},
-		"interactivity": {
-			"detect_on": "canvas",
-			"events": {
-				"onhover": {
-					"enable": true,
-					"mode": "repulse"
-				},
-				"onclick": {
-					"enable": true,
-					"mode": "push"
-				},
-				"resize": true
-			},
-			"modes": {
-				"grab": {
-					"distance": 400,
-					"line_linked": {
-						"opacity": 1
-					}
-				},
-				"bubble": {
-					"distance": 400,
-					"size": 40,
-					"duration": 2,
-					"opacity": 8,
-					"speed": 3
-				},
-				"repulse": {
-					"distance": 200,
-					"duration": 0.4
-				},
-				"push": {
-					"particles_nb": 4
-				},
-				"remove": {
-					"particles_nb": 2
-				}
-			}
-		},
-		"retina_detect": true
+window.onload = function() {
+	Particles.init({
+	  selector: '.particles-js',
+	  color: '#A9A9A9',
+	  maxParticles: 130,
+	  connectParticles: true,
+	  responsive: [
+	    {
+	      breakpoint: 768,
+	      options: {
+		maxParticles: 80
+	      }
+	    }, {
+	      breakpoint: 375,
+	      options: {
+		maxParticles: 50
+	      }
+	    }
+	  ]
 	});
+};
 </script>
 
 </body>
