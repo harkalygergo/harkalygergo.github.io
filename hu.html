@@ -24,25 +24,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai-sublime.min.css">
 
-	<style>
-		:root {
-			--text-color: #333;
-			--link-color: #709E18;
-		}
-		body { font-family: 'Ubuntu', sans-serif; background-color: black; }
-		h3 { border-top:2px solid #444; padding:1em 0 0.5em 0; }
-		a { color: var(--text-color); }
-		aside { background-color: #444; color:white; }
-		aside a { color:white; text-decoration: underline; }
-		aside a:hover { color:black; text-decoration: underline; }
-		aside img { border-radius:50%; }
-		aside ul { list-style: none; border-bottom:1px dotted lightgray; padding-bottom: 1em; }
-		main { font-size:17px; font-family: "Times New Roman", Times, serif; text-align: justify; }
-		#strengths ul, #weaknesses ul { list-style: none; padding: 0; }
-		#strengths ul li:before { content: '✅'; margin: 0 0.5em; }
-		#weaknesses ul li:before { content: '❌'; margin: 0 0.5em; }
-		.particles-js { top:0; left:0; position: absolute; width: 100%; height: 100%; z-index:-1; }
-	</style>
+	<link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <canvas class="particles-js"></canvas>
@@ -60,8 +42,8 @@
 			<div class="pt-3">
 				<ul>
 					<li><span class="material-symbols-outlined">smartphone</span> +36-30-55-123-37</li>
-					<li><span class="material-symbols-outlined">email</span> githubcv [at] harkalygergo.hu</li>
-					<li><span class="material-symbols-outlined">language</span> <a target="_blank" href="https://www.harkalygergo.hu">https://www.harkalygergo.hu</a></li>
+					<li><span class="material-symbols-outlined">email</span> cv [at] harkalygergo.hu</li>
+					<li><span class="material-symbols-outlined">language</span> <a target="_blank" href="https://www.harkalygergo.hu">www.harkalygergo.hu</a></li>
 				</ul>
 				<ul>
 					<li><span class="material-symbols-outlined">link</span> GitHub: <a target="_blank" rel="nofollow" href="https://github.com/harkalygergo/">harkalygergo</a></li>
@@ -76,7 +58,7 @@
 					<li><span class="material-symbols-outlined">family_restroom</span> férj és egy kisfiú apukája</li>
 				</ul>
 				<ul>
-					<li><span class="material-symbols-outlined">construction</span> Bootstrap Composer Ferdi Firefox Git HestiaCP PhpStorm Symfony Twig VPS WordPress Xubuntu</li>
+					<li><span class="material-symbols-outlined">construction</span> Bootstrap Composer Copilot Ferdium Firefox Git HestiaCP PhpStorm Symfony Twig VPS WordPress Xubuntu</li>
 				</ul>
 				<ul>
 					<li><span class="material-symbols-outlined">code</span> bash HTML CSS JS MySQL PHP SQLite</li>
@@ -91,7 +73,7 @@
 
 		</aside>
 		<main class="col-md-9 bg-light p-4">
-			<div class="text-end"><small><a href="./index.html">english</a></small></div>
+			<div id="alternateLanguage" class="text-end"><small><a href="./index.html">english</a></small></div>
 			<h1>Hello World,</h1>
 			<p class="lead">Harkály Gergő vagyok, egy full-stack webfejlesztő Budapestről. Az elmúlt ~15 évben rengeteg kis- és közepes vállalkozásnak segítettem, főként szabadúszóként, leginkább WordPress (+WooCommerce) CMS vagy Symfony PHP framework területeken, de van tapasztalatom az alábbiakkal is: Joomla, Magento, OpenCart, PrestaShop, ShopRenter, Shopify és még rengeteg más...</p>
 			<hr>
@@ -104,11 +86,11 @@
 			<h3><code>$ whoami</code></h3>
 			<p>Jelenleg vezető fejlesztő és operatív vezető vagyok egy egyedi grafikájú, papír alapú termékeket (például esküvői meghívó, baba születési kártya, keresztelő meghívó, stb.) kínáló vállalkozásnál. Fő feladatom a magyarországi, majd a németországi üzlet felépítése, később Lengyelországban, majd más európai országokban is. Irányítom a céget, a munkafolyamatokat, a kollégákat és döntéseket hozok, valamint fejlesztem a webáruházat és a belső rendszerünket.</p>
 
-			<p>I like <b>creating</b>, developing custom plugins and modules and web applications. In my opinion a system should be based on four corner points: maintainability, optimization, safety and speed. In 2023 I have started to use AI opportunities, for example GitHub Copilot or ChatGPT; and I also started to make open source applications, those are available for everyone on my <a href="https://github.com/harkalygergo/" target="_blank" rel="nofollow">public GitHub repositories</a>.</p>
-			<p>I am a husband and a father of a boy (born in December 2020). We live in the capital of Hungary, Budapest. I love watches, it is very interesting for me how complex solutions are crammed into such a small space.</p>
+			<p>Szeretek <b>alkotni</b>, egyedi bővítményeket, modulokat és webalkalmazásokat fejleszteni. Véleményem szerint egy rendszernek négy sarokpontot kell figyelembe vennie: biztonság, karbantarthatóság, optimalizálás és sebesség. 2023-ban elkezdtem használni az MI lehetőségeket, például GitHub Copilotot vagy ChatGPT-t, és szintúgy elkezdtem nyílt forráskódú alkalmazásokat közzétenni, melyek mindenki számára elérhetőek <a href="https://github.com/harkalygergo/" target="_blank" rel="nofollow">publikus GitHub repository</a>-kban.</p>
+			<p>Férj vagyok és remek kisfiú apukája (2020. decemberében született). Magyarország fővárosában, Budapesten élünk. Imádom az órákat, nagyon érdekes és vonzó számomra, milyen összetett rendszert tudnak belesűríteni olyan kis helyre.</p>
 
 			<div class="row">
-				<h3>Strengths & weaknesses</h3>
+				<h3>Erősségek & gyengeségek</h3>
 				<div class="col-sm" id="strengths">
 					<ul>
 						<li>tulajdonosi szemlélet</li>
@@ -127,13 +109,13 @@
 				</div>
 			</div>
 
-			<h3>What am I looking for?</h3>
-			<p>I have a full time job with 30 days notice period in Budapest, Hungary, but I am open for new opportunities to move to abroad in the near future with my family. Instead of a 40 hours full time job the best would be 36 hours / week job, 7 work hours on weekdays (from Monday to Friday) and extra 1 hour is for weekend availability for any urgent problem.</p>
+			<h3>Mit keresek?</h3>
+			<p>Jelenleg teljes foglalkoztatásban állok 30 napos felmondási idővel, de itt nem érzem teljesülni azokat a feltételeket, amik miatt elfogadtam ezt az ajánlatot anno, ezért nyitott vagyok a lehetőségekre.</p>
 
-			<h3>Projects</h3>
+			<h3>Projektek</h3>
 			<div class="row">
 				<div class="col-sm">
-					<h5>Own projects</h5>
+					<h5>Saját projektek</h5>
 					<ul>
 						<li><a target="_blank" rel="nofollow" href="https://github.com/harkalygergo/WebDevTools">WebDevTools</a></li>
 						<li><a target="_blank" rel="nofollow" href="https://github.com/harkalygergo/wp-turbo">WP Turbo</a></li>
@@ -150,7 +132,7 @@
 					</ul>
 				</div>
 				<div class="col-sm">
-					<h5>Planned projects</h5>
+					<h5>Tervezett projektek</h5>
 					<ul>
 						<li>eBooks</li>
 						<li>ServiceBook</li>
@@ -163,7 +145,7 @@
 			<h3>Portfolio</h3>
 			<div class="row">
 				<div class="col-sm">
-					<h5>Web application</h5>
+					<h5>Webalkalmazások</h5>
 					<ul>
 						<li><a target="_blank" rel="nofollow" href="https://www.luigisbox.com/">Luigi's Box</a> + WordPress</li>
 						<li><a target="_blank" rel="nofollow" href="https://www.timocom.com/">Timocom</a> + custom web app</li>
@@ -175,7 +157,7 @@
 					</ul>
 				</div>
 				<div class="col-sm">
-					<h5>Website</h5>
+					<h5>Honlapok</h5>
 					<ul>
 						<li><a target="_blank" href="https://www.ask-net.hu/">ask-net.hu</a></li>
 						<li><a target="_blank" href="https://www.beolina.hu/">beolina.hu</a></li>
@@ -248,7 +230,7 @@
 </div>
 
 <footer class="text-center text-white">
-	<small>.: &copy; 2023 Harkály Gergő :: All rights reserved! :: harkalygergo.github.io :.</small>
+	<small>.: &copy; 2024 Harkály Gergő :: Minden jog fenntartva! :: harkalygergo.github.io :.</small>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
