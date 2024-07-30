@@ -10,6 +10,10 @@ body {
     print-color-adjust: exact !important;
 }
 
+h1 {
+    font-weight: bold;
+}
+
 h3 {
     border-top: 2px solid #444;
     padding: 1em 0 0.5em 0;
@@ -78,13 +82,20 @@ main {
 @media print {
     aside {
         width: 30% !important;
+        font-size: 0.95rem;
     }
 
     main {
         width: 70% !important;
+        font-size: 1rem !important;
     }
 
-    #alternateLanguage {
-        display: none !important;
+    p.lead, blockquote.blockquote {
+        font-size: 1.05rem !important;
+    }
+
+    .my-md-5 {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
     }
 }
