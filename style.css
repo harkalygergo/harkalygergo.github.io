@@ -55,6 +55,14 @@ main {
     text-align: justify;
 }
 
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+.card ul li {
+    margin: 10px 0;
+}
+
 #strengths ul, #weaknesses ul {
     list-style: none;
     padding: 0;
