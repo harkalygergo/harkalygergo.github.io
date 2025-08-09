@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gergő Harkály - Full-Stack Web Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header .title {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hello-world {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Courier New', monospace;
+            font-size: 1.5em;
+            margin: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        h4 {
+            color: #2980b9;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .intro-text {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #2c3e50;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .strengths-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .strength-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .strength-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .job {
+            background: #f8f9fa;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            border-left: 5px solid #e74c3c;
+            transition: all 0.3s ease;
+        }
+
+        .job:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+
+        .company {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .technologies {
+            margin-top: 15px;
+            font-style: italic;
+            color: #34495e;
+            font-size: 0.9em;
+        }
+
+        .portfolio-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .reference-item {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .reference-item:hover {
+            background: #d5dbdb;
+            transform: translateY(-3px);
+        }
+
+        .reference-item a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .reference-item a:hover {
+            color: #3498db;
+        }
+
+        .education-item {
+            background: #fff;
+            border: 1px solid #ecf0f1;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            margin: 0 -40px -40px -40px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .availability {
+            background: #27ae60;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                border-radius: 10px;
+            }
+
+            .header, .content {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .skills-grid, .strengths-list, .references-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Gergő Harkály</h1>
+        <div class="title">Full-Stack Web Developer</div>
+        <div class="hello-world">&lt;Hello World!/&gt;</div>
+    </header>
+
+    <div class="content">
+        <section class="section">
+            <h2>About Me</h2>
+            <p class="intro-text">I have been participating in preliminary assessment, development, implementation, operation, and further development of primarily web-based projects for approximately 15 years. Most of my experience is with Symfony and WordPress, but I have encountered numerous other technologies as well.</p>
+
+            <p class="intro-text">Alongside continuous development driven by challenges, I have successfully capitalized on my professional knowledge and experience, while becoming a well-known, recognized, and beloved member of society.</p>
+        </section>
+
+        <section class="section">
+            <h2>$ whoami</h2>
+            <p>I love creating, building custom plugins, modules, and web applications. In my opinion, software should be based on four technological cornerstones: <strong>security, maintainability, optimization, and speed</strong>. In 2023, I started using AI possibilities as well. For many years I have been operating virtual servers (VPS), mostly with Ubuntu operating system. Locally, I have been using Linux instead of Windows for over 10 years.</p>
+
+            <p>The business world and enterprise management absolutely interest me; I have worked as a sole proprietor for a long time, and for a few years now as a co-owner of a Ltd. company. For a short period, I also ran my own food-related (package-free) store.</p>
+
+            <p>I strive to continuously educate myself; currently I am getting acquainted with the Odoo enterprise management system and Yii2 PHP framework, learning the Python programming language, and deepening my knowledge regarding PostgreSQL and Docker.</p>
+
+            <p>I am a husband and father of a little boy (2020) and a little girl (2025). I love watches; I think it's admirable how such a complex yet perfectly balanced, precise system can be compressed into such a small space. I enjoy running; one of my bucket list dreams is to complete at least one marathon.</p>
+        </section>
+
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <h3>Full-stack Knowledge</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">HTML5, CSS3, ES6</div>
+                <div class="skill-tag">Bootstrap</div>
+                <div class="skill-tag">jQuery</div>
+                <div class="skill-tag">npm</div>
+                <div class="skill-tag">Smarty</div>
+                <div class="skill-tag">Laravel Blade</div>
+                <div class="skill-tag">Shopify Liquid</div>
+                <div class="skill-tag">Symfony Twig</div>
+                <div class="skill-tag">PHP 8.*</div>
+                <div class="skill-tag">Composer</div>
+                <div class="skill-tag">Symfony</div>
+                <div class="skill-tag">Laravel</div>
+                <div class="skill-tag">Shopify</div>
+                <div class="skill-tag">WordPress</div>
+                <div class="skill-tag">Apache</div>
+                <div class="skill-tag">nginx</div>
+                <div class="skill-tag">GitHub CI/CD</div>
+                <div class="skill-tag">bash/shell</div>
+                <div class="skill-tag">cPanel</div>
+                <div class="skill-tag">HestiaCP</div>
+                <div class="skill-tag">Linux</div>
+                <div class="skill-tag">Ubuntu</div>
+                <div class="skill-tag">MariaDB</div>
+                <div class="skill-tag">MySQL</div>
+                <div class="skill-tag">phpMyAdmin</div>
+                <div class="skill-tag">SQLite3</div>
+                <div class="skill-tag">Redis</div>
+            </div>
+            <p>I am open to learning and mastering any new technology, and I strive to continuously maintain and further educate myself through hobby projects.</p>
+        </section>
+
+        <section class="section">
+            <h2>Strengths & Areas for Growth</h2>
+            <div class="strengths-list">
+                <div class="strength-item">
+                    <strong>Ownership mindset</strong><br>
+                    Taking responsibility and treating projects as my own
+                </div>
+                <div class="strength-item">
+                    <strong>Entrepreneurial thinking</strong><br>
+                    Always looking for innovative solutions and opportunities
+                </div>
+                <div class="strength-item">
+                    <strong>Leadership experience</strong><br>
+                    Proven track record of managing teams and projects
+                </div>
+                <div class="strength-item">
+                    <strong>Determined personality</strong><br>
+                    Persistent and focused on achieving goals
+                </div>
+                <div class="strength-item">
+                    <strong>Night owl type</strong><br>
+                    Most productive during evening hours
+                </div>
+                <div class="strength-item">
+                    <strong>Perfectionism</strong><br>
+                    Attention to detail and high quality standards
+                </div>
+                <div class="strength-item">
+                    <strong>Task-oriented thinking</strong><br>
+                    Always focused on deliverables and outcomes
+                </div>
+                <div class="strength-item">
+                    <strong>Concise communication</strong><br>
+                    Clear, direct, and efficient communication style
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Work Experience</h2>
+
+            <div class="job">
+                <div class="job-title">Full-stack Web Developer Freelancer</div>
+                <div class="company">Own Business, Karcag / Budapest</div>
+                <p>I undertake both short and long-term projects. Among other things, I worked on a monthly fee basis for a domestic business trading used electronic products. My task was to assist as a consultant for two existing external development companies running Laravel-based projects (an ERP and an online marketplace), professionally review them, establish or modify processes, and write actual code when necessary.</p>
+                <div class="technologies">Technologies: Blade, Bootstrap, Figma, Laravel</div>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Full-stack Developer, Operations Manager</div>
+                <div class="company">Paper Stories Ltd., Budapest</div>
+                <p>Paper Stories is a business offering uniquely designed, paper-based products (such as wedding invitations, baby birth cards, baptism invitations, etc.). My main task was building the Hungarian and then German webshop, as well as preparing additional countries. I partially managed the company, workflows, and colleagues, while also developing the webshops and our internal system, sometimes alone, sometimes with external help.</p>
+                <p>We started with a WordPress and WooCommerce webshop, but by ownership decision, we switched to Shopify after several months, so I had to plan and execute the migration between systems. Online product editability was provided by the Polish Printbox, which had to be integrated into both content management systems. We maintained contact with the Polish service provider's staff via email and Google Meets, in English. I also created a simple ERP for handling internal processes using the Symfony PHP framework.</p>
+                <div class="technologies">Technologies: Bootstrap, Printbox, Symfony, Shopify, Shopify Liquid, Twig, WordPress, WooCommerce</div>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Experienced Full-stack Web Developer</div>
+                <div class="company">Subcontractor, Budapest</div>
+                <p>I participated as a subcontractor in developing a complex internal enterprise management system for a domestic company with annual revenue of several tens of billions of forints, dealing with logistics. The two-person main contractor sought two senior colleagues at the beginning of the project, later expanding with a junior and an external student. Besides ERP development, tasks also included creating a partner portal and a web application for drivers, first for head units in trucks, later for tablets.</p>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Lead Developer, Entrepreneur, Agency Manager</div>
+                <div class="company">Own Marketing & Web Agency, Miskolc</div>
+                <p>After several years of freelance activity, but still as a sole proprietor, I launched a mini agency in Miskolc with a rented office and two employees (administrator + junior developer), as well as occasional student worker assistance. We mainly assessed and implemented various online needs of domestic SMEs, so I encountered many different technological solutions, frameworks, content management systems, and subscription-based external services.</p>
+                <p>Essentially, I was the lead developer, project manager, operations manager, marketer, and customer service representative all in one. A burglary theft, the stealing of all our laptops, put an end to the story and forced me to start a new chapter.</p>
+                <div class="technologies">Technologies: WordPress, Joomla, Magento, Prestashop, ShopRenter, Unas, Shopify, courier services, financial service providers, invoicing software, Luigi, Timocom, GetPrintbox, etc.</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Portfolio</h2>
+
+            <div class="portfolio-item">
+                <h4>PLATFORM</h4>
+                <p>Symfony-based enterprise management system with numerous useful tools (customer and task management, popup, hosting, website creation, newsletter sending, etc.)</p>
+            </div>
+
+            <div class="portfolio-item">
+                <h4>LaraMart</h4>
+                <p>Laravel-based online marketplace. As a live example, I launched a version dealing with new and used watch advertisements.</p>
+            </div>
+
+            <div class="portfolio-item">
+                <h4>Stack Overflow</h4>
+                <p>Numbers achieved on Stack Overflow or other Exchange networks, such as <a href="https://wordpress.stackexchange.com/users/71655/hark%c3%a1ly-gerg%c5%91" style="color: #fff; text-decoration: underline;">wordpress.stackexchange.com</a>, are also good references in my opinion.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Additional References</h2>
+            <h3>Web Applications</h3>
+            <div class="references-grid">
+                <div class="reference-item">
+                    <a href="https://getprintbox.com/">Printbox</a> + Shopify
+                </div>
+                <div class="reference-item">
+                    <a href="https://getprintbox.com/">Printbox</a> + WordPress
+                </div>
+                <div class="reference-item">
+                    <a href="https://www.luigisbox.com/">Luigi's Box</a> + WordPress
+                </div>
+                <div class="reference-item">
+                    <a href="https://www.timocom.com/">Timocom</a> + custom web app
+                </div>
+                <div class="reference-item">
+                    <a href="https://www.sprinter.hu/">Sprinter</a> + WordPress
+                </div>
+                <div class="reference-item">
+                    <a href="https://www.naturasoft.hu/">Naturasoft</a> + ShopRenter, WordPress
+                </div>
+                <div class="reference-item">
+                    <a href="https://www.agroinform.hu/">Agroinform</a> + ShopRenter
+                </div>
+                <div class="reference-item">
+                    <a href="https://clearadmin.hu/">Clear Admin</a> + Magento 1, 2
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+
+            <div class="education-item">
+                <h4>University of Miskolc, Miskolc</h4>
+                <p>Computer Programming BSc</p>
+            </div>
+
+            <div class="education-item">
+                <h4>University of West Hungary, Budapest</h4>
+                <p>Economics - Management Studies</p>
+            </div>
+
+            <div class="education-item">
+                <h4>Bocskai István High School and Economics Vocational School, Szerencs</h4>
+                <p>Six-grade program (1999-2001); Law enforcement program (2001-2005)</p>
+            </div>
+
+            <h3>Other Qualifications</h3>
+            <div class="education-item">
+                <h4>Driving License</h4>
+                <p>AK (2007) and B (2003) categories</p>
+            </div>
+
+            <div class="education-item">
+                <h4>Language Skills</h4>
+                <p>Confident intermediate English both spoken and written</p>
+            </div>
+
+            <div class="education-item">
+                <h4>Business Knowledge</h4>
+                <p>Taxation, employment, processes, etc.</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="contact-section">
+        <h2 style="color: white; border-bottom-color: rgba(255,255,255,0.3);">Employment</h2>
+        <div class="availability">
+            ✅ Available Immediately
+        </div>
+        <p style="margin-top: 20px;">I can start immediately, open to both employee or entrepreneurial cooperation.</p>
+        <p>In case of employment relationship, 5 days a week office presence is not an obstacle.</p>
+        <p><strong>Suitable positions:</strong> Full-stack developer, PHP developer, Project manager, Technology lead</p>
+    </div>
+</div>
+
+<script>
+    // Add smooth scrolling and interactive effects
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animate skill tags on hover
+        const skillTags = document.querySelectorAll('.skill-tag');
+        skillTags.forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.05)';
+            });
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add typing effect to the hello world text
+        const helloWorld = document.querySelector('.hello-world');
+        const originalText = helloWorld.textContent;
+        helloWorld.textContent = '';
+
+        let i = 0;
+        const typeWriter = () => {
+            if (i < originalText.length) {
+                helloWorld.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+
+        setTimeout(typeWriter, 1000);
+    });
+</script>
+</body>
+</html>
