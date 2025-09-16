@@ -39,7 +39,7 @@
 			<div class="text-bg-dark text-center pb-1">
 				<img src="./harkalygergo.jpg" alt="Harkály Gergő" class="img-fluid py-4 px-5" />
 				<h2>Gergő Harkály</h2>
-				<p>senior full-stack web developer</p>
+				<p>experienced full-stack web developer</p>
 				<div class="btn-group d-print-none" role="group">
 					<a class="btn btn-success m-2" href="/Harkaly-Gergo-CV_EN.pdf" download>
 						&#8675; English CV
@@ -62,7 +62,7 @@
 					<li><span class="material-symbols-outlined">link</span> WordPress.org: <a target="_blank" rel="nofollow" href="https://wordpress.org/support/users/harkalygergo/">harkalygergo</a></li>
 				</ul>
 				<ul>
-					<li><span class="material-symbols-outlined" title="date of birth">cake</span> 1986</li>
+					<li><span class="material-symbols-outlined" title="date of birth">cake</span> 1986., Miskolc</li>
 					<li><span class="material-symbols-outlined">pin_drop</span> Budapest XI., Hungary</li>
 					<li><span class="material-symbols-outlined" title="nationality">public</span> Hungarian</li>
 					<li><span class="material-symbols-outlined">family_restroom</span> husband &amp; father of two</li>
@@ -126,7 +126,8 @@
                     <div class="card-header fw-bold">Backend</div>
                     <div class="card-body">
                         <ul>
-                            <li><i class="fa-brands fa-php"></i> PHP 8.*</li>
+                            <li><i class="fa-brands fa-php"></i> PHP</li>
+                            <li><i class="fa-brands fa-python"></i> Python</li>
                             <li><i class="fa-solid fa-music"></i> Composer</li>
                             <li><i class="fa-brands fa-npm"></i> npm</li>
                             <li><i class="fa-brands fa-symfony"></i> Symfony</li>
@@ -401,13 +402,27 @@
 <!-- https://marcbruederlin.github.io/particles.js/ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
 <script>
-window.onload = function() {
+window.addEventListener("load", (event) => {
 	hljs.highlightAll();
 	Particles.init({
 		selector: '.particles-js',
 		color: "#ffffff",
+		maxParticles: 100,
+		connectParticles: true,
+		responsive: [{
+				breakpoint: 768,
+				options: {
+					maxParticles: 80
+				}
+			}, {
+				breakpoint: 375,
+				options: {
+					maxParticles: 50
+				}
+			}
+		]
 	});
-};
+});
 </script>
 
 </body>
