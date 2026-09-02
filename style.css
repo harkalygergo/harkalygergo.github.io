@@ -12,13 +12,12 @@ body {
     print-color-adjust: exact !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
 main h2 {
-    border-top: 2px solid #444;
-    padding: 1em 0 0.5em 0;
+	font-weight:300;
 }
 
 a {
@@ -51,7 +50,7 @@ aside ul {
 }
 
 main {
-    font-size: 17px;
+    font-size: 1rem;
     text-align: justify;
 }
 
